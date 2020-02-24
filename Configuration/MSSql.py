@@ -11,7 +11,7 @@ class MSSql(object):
         self.__session = None
 
     def create_engine(self):
-        self.__engine = create_engine('mssql+pymssql://sa:magic11!@localhost/master', echo=True)
+        self.__engine = create_engine('mssql+pymssql://sa:magic11!@localhost/master', echo=False)
         self.__engine.connect()
         return self.__engine
 
@@ -36,4 +36,4 @@ class MSSql(object):
 
 if __name__ =="__main__":
     MSSql().create_engine()
-    print("fucking tering zooi")
+    print("Seems to work")

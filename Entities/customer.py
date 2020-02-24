@@ -1,5 +1,6 @@
-from sqlalchemy import Table, MetaData, Column, Integer, String
+from sqlalchemy import Column, Integer, MetaData, String, Table
 from sqlalchemy.orm import relationship
+
 from Entities import Base
 from Entities.address import Address
 
@@ -17,4 +18,8 @@ class Customer(Base):
         self.firstName =firstName
         self.lastName = lastName
 
+    def addAddres(self, address):
+        self.addresses.append(address)
 
+    def __repr__(self):
+        return "<Customer(firstName={}, lastName={}, addresses={}".format(self.firstName, self.lastName, self.addresses)
