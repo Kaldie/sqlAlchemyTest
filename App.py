@@ -4,6 +4,8 @@ from Entities.address import Address
 
 from Entities import Base
 
+import Logging
+
 if __name__ =="__main__":
     MSSql().updateDatabase()
     session = MSSql().getSession()

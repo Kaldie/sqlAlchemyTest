@@ -16,10 +16,8 @@ class MSSql(object):
         return self.__engine
 
     def getSession (self):
-        
         if self.__session:
             return self.__session()
-
 
         if not self.__engine:
             self.create_engine()
@@ -36,4 +34,3 @@ class MSSql(object):
 
 if __name__ =="__main__":
     MSSql().create_engine()
-    print("fucking tering zooi")

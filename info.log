@@ -1,0 +1,29 @@
+2020-02-27 10:40:32,358 - root - INFO - this message should be displayed
+2020-02-27 10:40:32,389 - sqlalchemy.engine.base.Engine - INFO - select @@version
+2020-02-27 10:40:32,389 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,392 - sqlalchemy.engine.base.Engine - INFO - SELECT schema_name()
+2020-02-27 10:40:32,392 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,394 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-02-27 10:40:32,395 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,396 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test unicode returns' AS NVARCHAR(60)) AS anon_1
+2020-02-27 10:40:32,396 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,403 - sqlalchemy.engine.base.Engine - INFO - SELECT [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA], [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_NAME], [INFORMATION_SCHEMA].[COLUMNS].[IS_NULLABLE], [INFORMATION_SCHEMA].[COLUMNS].[DATA_TYPE], [INFORMATION_SCHEMA].[COLUMNS].[ORDINAL_POSITION], [INFORMATION_SCHEMA].[COLUMNS].[CHARACTER_MAXIMUM_LENGTH], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_PRECISION], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_SCALE], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_DEFAULT], [INFORMATION_SCHEMA].[COLUMNS].[COLLATION_NAME] 
+FROM [INFORMATION_SCHEMA].[COLUMNS] 
+WHERE [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME] = CAST(%(table_name_1)s AS NVARCHAR(max)) AND [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA] = CAST(%(table_schema_1)s AS NVARCHAR(max))
+2020-02-27 10:40:32,403 - sqlalchemy.engine.base.Engine - INFO - {'table_name_1': 'address', 'table_schema_1': 'dbo'}
+2020-02-27 10:40:32,406 - sqlalchemy.engine.base.Engine - INFO - SELECT [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA], [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_NAME], [INFORMATION_SCHEMA].[COLUMNS].[IS_NULLABLE], [INFORMATION_SCHEMA].[COLUMNS].[DATA_TYPE], [INFORMATION_SCHEMA].[COLUMNS].[ORDINAL_POSITION], [INFORMATION_SCHEMA].[COLUMNS].[CHARACTER_MAXIMUM_LENGTH], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_PRECISION], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_SCALE], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_DEFAULT], [INFORMATION_SCHEMA].[COLUMNS].[COLLATION_NAME] 
+FROM [INFORMATION_SCHEMA].[COLUMNS] 
+WHERE [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME] = CAST(%(table_name_1)s AS NVARCHAR(max)) AND [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA] = CAST(%(table_schema_1)s AS NVARCHAR(max))
+2020-02-27 10:40:32,407 - sqlalchemy.engine.base.Engine - INFO - {'table_name_1': 'customers', 'table_schema_1': 'dbo'}
+2020-02-27 10:40:32,413 - sqlalchemy.engine.base.Engine - INFO - select @@version
+2020-02-27 10:40:32,413 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,414 - sqlalchemy.engine.base.Engine - INFO - SELECT schema_name()
+2020-02-27 10:40:32,414 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,416 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2020-02-27 10:40:32,416 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,417 - sqlalchemy.engine.base.Engine - INFO - SELECT CAST('test unicode returns' AS NVARCHAR(60)) AS anon_1
+2020-02-27 10:40:32,418 - sqlalchemy.engine.base.Engine - INFO - {}
+2020-02-27 10:40:32,434 - sqlalchemy.engine.base.Engine - INFO - BEGIN (implicit)
+2020-02-27 10:40:32,437 - sqlalchemy.engine.base.Engine - INFO - INSERT INTO customers ([firstName], [lastName]) OUTPUT inserted.id VALUES (%(firstName)s, %(lastName)s)
+2020-02-27 10:40:32,437 - sqlalchemy.engine.base.Engine - INFO - {'firstName': 'ruud', 'lastName': 'lala'}
+2020-02-27 10:40:32,439 - sqlalchemy.engine.base.Engine - INFO - COMMIT
