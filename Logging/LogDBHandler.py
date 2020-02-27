@@ -11,15 +11,12 @@ class LogDBHandler(logging.Handler):
     '''
 
     def __init__(self):
-        print("here!")
-        print(abc)
         logging.Handler.__init__(self)
         self.__mssql = MSSql()
 
     def emit(self, record):
         self.__mssql = MSSql()
         entry = LogEntry(record.levelname, record.msg.strip().replace('\'','\'\''))
-        print("HHHHHHHHHHHEEEEEEEEEEEEEEEEEERRRRRRRRREEEEEEEEEe")
         session = self.__mssql.getSession()
         session.add(entry)
         session.commit()

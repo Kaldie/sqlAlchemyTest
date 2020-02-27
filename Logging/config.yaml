@@ -39,8 +39,8 @@ loggers:
   dblogger:
     level: DEBUG
     handlers: [console, db_handler]
-    propagate: yes
+    propagate: no
 
 root:
   level: INFO
-  handlers: [console, db_handler, info_file_handler, error_file_handler]
+  handlers: [console, info_file_handler, error_file_handler]

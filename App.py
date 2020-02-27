@@ -15,7 +15,7 @@ if __name__ =="__main__":
     # ed_customer.addAddres(Address("lala", 10))
     # ed_customer.addAddres(Address("lala", 11))
     
-    logging.getLogger().info("This need to appear!")
+    logging.getLogger("dblogger").critical("magic magic")
 
     # session.add(ed_customer)
     # session.commit()
