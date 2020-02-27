@@ -1,6 +1,7 @@
 import os
 import yaml
 import logging.config
+from Logging.LogDBHandler import LogDBHandler
 
 
 def setup_logging( default_path='Logging/config.yaml', default_level=logging.INFO, env_key='LOG_CFG'):
@@ -15,7 +16,7 @@ def setup_logging( default_path='Logging/config.yaml', default_level=logging.INF
         raise ValueError("Could not resolve the logging config")
     if os.path.exists(path):
         with open(path, 'rt') as f:
-            config = yaml.load(f)
+            config = yaml.load(f, Loader=yaml.FullLoader)
         logging.config.dictConfig(config)
     else:
         logging.basicConfig(level=default_level)

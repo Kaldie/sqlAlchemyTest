@@ -1,0 +1,13 @@
+astroid==1.6.6
+autopep8==1.5
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pycodestyle==2.5.0
+pylint==1.9.5
+pymssql==2.1.4
+python-dotenv==0.11.0
+PyYAML==5.3
+six==1.14.0
+SQLAlchemy==1.3.13
+wrapt==1.12.0

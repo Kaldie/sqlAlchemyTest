@@ -1,7 +1,11 @@
-from sqlalchemy.orm import sessionmaker
+import os
+
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from Entities import Base
+
 
 class MSSql(object):
     Session = sessionmaker()
@@ -9,9 +13,15 @@ class MSSql(object):
     def __init__(self):
         self.__engine = None
         self.__session = None
+        
+        load_dotenv()
+        self.__user = os.getenv('USER', None)
+        self.__password = os.getenv('PASSWORD', None)
+        self.__host = os.getenv('HOST', "localhost")
 
     def create_engine(self):
-        self.__engine = create_engine('mssql+pymssql://sa:magic11!@localhost/master', echo=False)
+        connectionString = 'mssql+pymssql://{user}:{password}@{host}/master'.format(user=self.__user, password=self.__password, host=self.__host)
+        self.__engine = create_engine(connectionString, echo=False)
         self.__engine.connect()
         return self.__engine
 
@@ -23,6 +33,7 @@ class MSSql(object):
             self.create_engine()
 
         self.__session = sessionmaker(bind=self.__engine)
+        
 
         print("lala", self.__session)
         return self.__session()
@@ -34,4 +45,3 @@ class MSSql(object):
 
 if __name__ =="__main__":
     MSSql().create_engine()
-

@@ -31,12 +31,16 @@ handlers:
     backupCount: 20
     encoding: utf8
 
+  db_handler:
+    class: Logging.LogDBHandler
+    formatter: simple
+
 loggers:
-  my_module:
-    level: ERROR
-    handlers: [console]
-    propagate: no
+  dblogger:
+    level: DEBUG
+    handlers: [console, db_handler]
+    propagate: yes
 
 root:
   level: INFO
-  handlers: [console, info_file_handler, error_file_handler]
+  handlers: [console, db_handler, info_file_handler, error_file_handler]

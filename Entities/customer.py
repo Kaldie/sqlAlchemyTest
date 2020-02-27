@@ -4,7 +4,6 @@ from sqlalchemy.orm import relationship
 from Entities import Base
 from Entities.address import Address
 
-
 class Customer(Base):
     __tablename__ = 'customers'
 

@@ -4,17 +4,18 @@ from Entities.address import Address
 
 from Entities import Base
 
+import logging
 import Logging
 
 if __name__ =="__main__":
-    MSSql().updateDatabase()
-    session = MSSql().getSession()
+    # MSSql().updateDatabase()
+    # session = MSSql().getSession()
 
-    ed_customer = Customer("ruud","lala")
-    ed_customer.addAddres(Address("lala", 10))
-    ed_customer.addAddres(Address("lala", 11))
-    session.add(ed_customer)
+    # ed_customer = Customer("ruud","lala")
+    # ed_customer.addAddres(Address("lala", 10))
+    # ed_customer.addAddres(Address("lala", 11))
+    
+    logging.getLogger().info("This need to appear!")
 
-    print("HEEEEEEEEEEEEEREEEEEEEEEEEE", ed_customer)
-
-    session.commit()
+    # session.add(ed_customer)
+    # session.commit()
