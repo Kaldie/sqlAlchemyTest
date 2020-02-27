@@ -7,3 +7,4 @@ class LogEntry(Base):
     level = Column(String)
     message = Column(String)
     datetime = Column(DateTime)
+    
